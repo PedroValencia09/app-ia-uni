@@ -14,7 +14,8 @@ opcion = st.sidebar.radio(
         "3. Clasificación",
         "4. Herramientas",
         "5. Disciplinas",
-        "6. Glosario"
+        "6. Glosario",
+        "7. Ensayo de IA"
     ]
 )
 
@@ -115,7 +116,7 @@ elif opcion == "6. Glosario":
         ("Asistente virtual", "Software basado en IA diseñado para interactuar con usuarios, comprender comandos de voz o texto y ejecutar tareas específicas de manera autónoma."),
         ("Visión Artificial", "Campo de la IA que permite a las computadoras procesar, analizar y comprender imágenes o videos del mundo real para extraer información útil."),
         ("Agentico", "Propiedad o enfoque de un sistema de IA que tiene autonomía para tomar decisiones, planificar pasos y ejecutar acciones dirigidas a lograr un objetivo."),
-        ("Machine Learning", "Rama de la IA que permite a los sistemas aprender y mejorar automáticamente a partir de datos sin ser programados explícitamente para cada tarea."),
+        ("Machine Learning", "Rama de la IA que permite a los sistemas aprender y mejorar automáticamente a partir de datos sin ser programados explicitamente para cada tarea."),
         ("Datos de entrenamiento", "Conjunto de información recolectada y procesada que se utiliza para entrenar un modelo de IA y enseñarle a identificar patrones o hacer predicciones."),
         ("Ingeniería inversa", "Proceso de descomponer o analizar un sistema informático o modelo para comprender su funcionamiento interno, arquitectura o algoritmos."),
         ("Agente", "Entidad de software o hardware que percibe su entorno a través de sensores, toma decisiones y ejecuta acciones mediante actuadores para lograr un fin."),
@@ -133,3 +134,27 @@ elif opcion == "6. Glosario":
     for idx, (concepto, definicion) in enumerate(glosario_data, 1):
         with st.expander(f"{idx}. {concepto}"):
             st.write(definicion)
+
+# ---------------- 7. ENSAYO DE IA ----------------
+elif opcion == "7. Ensayo de IA":
+    st.header("7. Ensayo de IA")
+    st.subheader("Inteligencia Artificial: ¿Una herramienta para avanzar o un riesgo sin control?")
+    st.write(
+        "En este ensayo elaborado por **Pedro Valencia Vazquez** se analizan los principales dilemas éticos y sociales "
+        "relacionados con la Inteligencia Artificial, abordando temas como prejuicios algorítmicos, impacto laboral, "
+        "privacidad y el uso responsable de la tecnología."
+    )
+    
+    pdf_filename = "Ensayo_IA_Valencia.pdf"
+    
+    if os.path.exists(pdf_filename):
+        with open(pdf_filename, "rb") as pdf_file:
+            st.download_button(
+                label="📄 Descargar / Leer Ensayo (PDF)",
+                data=pdf_file,
+                file_name=pdf_filename,
+                mime="application/pdf",
+                use_container_width=False
+            )
+    else:
+        st.warning(f"El archivo '{pdf_filename}' no se encuentra en el directorio actual. Por favor, súbelo a tu repositorio de GitHub.")
