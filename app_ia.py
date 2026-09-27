@@ -116,7 +116,18 @@ elif opcion == "6. Glosario":
         ("Asistente virtual", "Software basado en IA diseñado para interactuar con usuarios, comprender comandos de voz o texto y ejecutar tareas específicas de manera autónoma."),
         ("Visión Artificial", "Campo de la IA que permite a las computadoras procesar, analizar y comprender imágenes o videos del mundo real para extraer información útil."),
         ("Agentico", "Propiedad o enfoque de un sistema de IA que tiene autonomía para tomar decisiones, planificar pasos y ejecutar acciones dirigidas a lograr un objetivo."),
-        ("Machine Learning", "Rama de la IA que permite a los sistemas aprender y mejorar automáticamente a partir de datos sin ser programados explicitamente para cada tarea."),
+        (
+            "Machine Learning", 
+            "Rama de la IA que permite a los sistemas aprender y mejorar automáticamente a partir de datos sin ser programados explícitamente para cada tarea.\n\n"
+            "**Ejemplo de uso en TikTok:**\n"
+            "Las plataformas de video corto necesitan atraer y retener usuarios mostrándoles videos que se adapten a sus intereses en un flujo infinito de contenido. Para lograrlo, implementan modelos de Machine Learning entrenados con patrones de interacción y características del video.\n\n"
+            "• **Datos de Entrada:**\n"
+            "  - *Características del video:* La estructura visual y sonora del contenido (objetos detectados en imagen, movimientos, transcripciones de audio, texto en pantalla, hashtags y género).\n"
+            "  - *Historial de comportamiento del usuario:* El registro de secuencias de visualización (si el usuario vio un video antes o después de una recomendación, tiempo de retención, videos omitidos con scroll rápido, loops, likes y guardados).\n\n"
+            "• **Procesamiento:** Algoritmos de recomendación y visión artificial analizan la relación entre la estructura del video y los patrones de interacción guardados de millones de usuarios para predecir la afinidad del espectador con videos no vistos.\n\n"
+            "• **Datos de Salida:**\n"
+            "  - *Sugerencia personalizada de videos:* Una secuencia de clips seleccionada explícitamente para el usuario (presentada en la sección 'Para Ti' o bajo el criterio 'porque interactuaste con...')."
+        ),
         ("Datos de entrenamiento", "Conjunto de información recolectada y procesada que se utiliza para entrenar un modelo de IA y enseñarle a identificar patrones o hacer predicciones."),
         ("Ingeniería inversa", "Proceso de descomponer o analizar un sistema informático o modelo para comprender su funcionamiento interno, arquitectura o algoritmos."),
         ("Agente", "Entidad de software o hardware que percibe su entorno a través de sensores, toma decisiones y ejecuta acciones mediante actuadores para lograr un fin."),
@@ -133,7 +144,7 @@ elif opcion == "6. Glosario":
 
     for idx, (concepto, definicion) in enumerate(glosario_data, 1):
         with st.expander(f"{idx}. {concepto}"):
-            st.write(definicion)
+            st.markdown(definicion)
 
 # ---------------- 7. ENSAYO DE IA ----------------
 elif opcion == "7. Ensayo de IA":
