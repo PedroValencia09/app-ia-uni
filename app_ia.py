@@ -108,8 +108,8 @@ elif opcion == "6. Glosario":
     st.header("6. Glosario de IA")
     st.subheader("Glosario de Conceptos Fundamentales")
 
-    # Ruta local o URL de tu imagen
-    imagen_sistema_experto = "ruta/a/tu/imagen_sistema_experto.png"
+    # Nombre exacto de la imagen en GitHub
+    imagen_sistema_experto = "366dcdbb-ab63-4bb8-8114-9018ca9aea19.jpg"
 
     glosario_data = [
         ("Deep learning", "Subcampo del Machine Learning basado en redes neuronales profundas con múltiples capas que aprenden representaciones complejas de datos.", None),
@@ -150,7 +150,10 @@ elif opcion == "6. Glosario":
         with st.expander(f"{idx}. {concepto}"):
             st.markdown(definicion)
             if imagen:
-                st.image(imagen, caption="Esquema del Sistema Experto / Inteligente", use_container_width=True)
+                if os.path.exists(imagen):
+                    st.image(imagen, caption="Esquema del Sistema Experto / Inteligente", use_container_width=True)
+                else:
+                    st.warning(f"No se encontró la imagen '{imagen}' en el repositorio.")
 # ---------------- 7. ENSAYO DE IA ----------------
 elif opcion == "7. Ensayo de IA":
     st.header("7. Ensayo de IA")
