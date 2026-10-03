@@ -107,15 +107,18 @@ elif opcion == "5. Disciplinas":
 elif opcion == "6. Glosario":
     st.header("6. Glosario de IA")
     st.subheader("Glosario de Conceptos Fundamentales")
-    
+
+    # Ruta local o URL de tu imagen
+    imagen_sistema_experto = "ruta/a/tu/imagen_sistema_experto.png"
+
     glosario_data = [
-        ("Deep learning", "Subcampo del Machine Learning basado en redes neuronales profundas con múltiples capas que aprenden representaciones complejas de datos."),
-        ("Predicción de comportamiento", "Técnica analítica que utiliza algoritmos e información histórica para anticipar acciones, tendencias o decisiones futuras de un sistema o usuario."),
-        ("Red neuronal", "Modelo computacional inspirado en la estructura y funcionamiento del cerebro humano, compuesto por nodos (neuronas artificiales) interconectados."),
-        ("LLM multimodales", "Grandes Modelos de Lenguaje capaces de procesar, comprender y generar múltiples tipos de datos de forma simultánea (texto, imágenes, audio, video)."),
-        ("Asistente virtual", "Software basado en IA diseñado para interactuar con usuarios, comprender comandos de voz o texto y ejecutar tareas específicas de manera autónoma."),
-        ("Visión Artificial", "Campo de la IA que permite a las computadoras procesar, analizar y comprender imágenes o videos del mundo real para extraer información útil."),
-        ("Agentico", "Propiedad o enfoque de un sistema de IA que tiene autonomía para tomar decisiones, planificar pasos y ejecutar acciones dirigidas a lograr un objetivo."),
+        ("Deep learning", "Subcampo del Machine Learning basado en redes neuronales profundas con múltiples capas que aprenden representaciones complejas de datos.", None),
+        ("Predicción de comportamiento", "Técnica analítica que utiliza algoritmos e información histórica para anticipar acciones, tendencias o decisiones futuras de un sistema o usuario.", None),
+        ("Red neuronal", "Modelo computacional inspirado en la estructura y funcionamiento del cerebro humano, compuesto por nodos (neuronas artificiales) interconectados.", None),
+        ("LLM multimodales", "Grandes Modelos de Lenguaje capaces de procesar, comprender y generar múltiples tipos de datos de forma simultánea (texto, imágenes, audio, video).", None),
+        ("Asistente virtual", "Software basado en IA diseñado para interactuar con usuarios, comprender comandos de voz o texto y ejecutar tareas específicas de manera autónoma.", None),
+        ("Visión Artificial", "Campo de la IA que permite a las computadoras procesar, analizar y comprender imágenes o videos del mundo real para extraer información útil.", None),
+        ("Agentico", "Propiedad o enfoque de un sistema de IA que tiene autonomía para tomar decisiones, planificar pasos y ejecutar acciones dirigidas a lograr un objetivo.", None),
         (
             "Machine Learning", 
             "Rama de la IA que permite a los sistemas aprender y mejorar automáticamente a partir de datos sin ser programados explícitamente para cada tarea.\n\n"
@@ -126,26 +129,28 @@ elif opcion == "6. Glosario":
             "  - *Historial de comportamiento del usuario:* El registro de secuencias de visualización (si el usuario vio un video antes o después de una recomendación, tiempo de retención, videos omitidos con scroll rápido, loops, likes y guardados).\n\n"
             "• **Procesamiento:** Algoritmos de recomendación y visión artificial analizan la relación entre la estructura del video y los patrones de interacción guardados de millones de usuarios para predecir la afinidad del espectador con videos no vistos.\n\n"
             "• **Datos de Salida:**\n"
-            "  - *Sugerencia personalizada de videos:* Una secuencia de clips seleccionada explícitamente para el usuario (presentada en la sección 'Para Ti' o bajo el criterio 'porque interactuaste con...')."
+            "  - *Sugerencia personalizada de videos:* Una secuencia de clips seleccionada explícitamente para el usuario (presentada en la sección 'Para Ti' o bajo el criterio 'porque interactuaste con...').",
+            None
         ),
-        ("Datos de entrenamiento", "Conjunto de información recolectada y procesada que se utiliza para entrenar un modelo de IA y enseñarle a identificar patrones o hacer predicciones."),
-        ("Ingeniería inversa", "Proceso de descomponer o analizar un sistema informático o modelo para comprender su funcionamiento interno, arquitectura o algoritmos."),
-        ("Agente", "Entidad de software o hardware que percibe su entorno a través de sensores, toma decisiones y ejecuta acciones mediante actuadores para lograr un fin."),
-        ("Sesgo algorítmico", "Error sistemático e injusto en los resultados de un modelo de IA derivado de prejuicios presentes en los datos de entrenamiento o el diseño."),
-        ("Equidad algorítmica", "Principio o práctica de diseñar algoritmos para garantizar que sus resultados no discriminen ni beneficien desproporcionadamente a ningún grupo."),
-        ("Integridad de datos", "Exactitud, consistencia, precisión y confiabilidad de los datos a lo largo de todo su ciclo de vida y procesamiento."),
-        ("Análisis de datos", "Proceso de examinar, limpiar, transformar y modelar datos para descubrir información útil, patrones relevantes y respaldar la toma de decisiones."),
-        ("Detección de objetos", "Tecnología de visión por computadora que identifica y localiza objetos específicos dentro de una imagen o secuencia de video en tiempo real."),
-        ("Chatbot", "Programa informático diseñado para simular conversaciones con usuarios humanos a través de texto o voz mediante reglas o modelos de IA."),
-        ("Sistema experto", "Sistema informático que emula la capacidad de toma de decisiones de un experto humano en un dominio o área específica del conocimiento."),
-        ("Automatización", "Uso de tecnología, software e IA para realizar procesos y tareas con mínima o nula intervención humana directa."),
-        ("Big data", "Conjuntos de datos de gran volumen, alta velocidad y gran variedad que requieren tecnologías avanzadas para su procesamiento y análisis.")
+        ("Datos de entrenamiento", "Conjunto de información recolectada y procesada que se utiliza para entrenar un modelo de IA y enseñarle a identificar patrones o hacer predicciones.", None),
+        ("Ingeniería inversa", "Proceso de descomponer o analizar un sistema informático o modelo para comprender su funcionamiento interno, arquitectura o algoritmos.", None),
+        ("Agente", "Entidad de software o hardware que percibe su entorno a través de sensores, toma decisiones y ejecuta acciones mediante actuadores para lograr un fin.", None),
+        ("Sesgo algorítmico", "Error sistemático e injusto en los resultados de un modelo de IA derivado de prejuicios presentes en los datos de entrenamiento o el diseño.", None),
+        ("Equidad algorítmica", "Principio o práctica de diseñar algoritmos para garantizar que sus resultados no discriminen ni beneficien desproporcionadamente a ningún grupo.", None),
+        ("Integridad de datos", "Exactitud, consistencia, precisión y confiabilidad de los datos a lo largo de todo su ciclo de vida y procesamiento.", None),
+        ("Análisis de datos", "Proceso de examinar, limpiar, transformar y modelar datos para descubrir información útil, patrones relevantes y respaldar la toma de decisiones.", None),
+        ("Detección de objetos", "Tecnología de visión por computadora que identifica y localiza objetos específicos dentro de una imagen o secuencia de video en tiempo real.", None),
+        ("Chatbot", "Programa informático diseñado para simular conversaciones con usuarios humanos a través de texto o voz mediante reglas o modelos de IA.", None),
+        ("Sistema experto", "Sistema informático que emula la capacidad de toma de decisiones de un experto humano en un dominio o área específica del conocimiento.", imagen_sistema_experto),
+        ("Automatización", "Uso de tecnología, software e IA para realizar procesos y tareas con mínima o nula intervención humana directa.", None),
+        ("Big data", "Conjuntos de datos de gran volumen, alta velocidad y gran variedad que requieren tecnologías avanzadas para su procesamiento y análisis.", None)
     ]
 
-    for idx, (concepto, definicion) in enumerate(glosario_data, 1):
+    for idx, (concepto, definicion, imagen) in enumerate(glosario_data, 1):
         with st.expander(f"{idx}. {concepto}"):
             st.markdown(definicion)
-
+            if imagen:
+                st.image(imagen, caption="Esquema del Sistema Experto / Inteligente", use_container_width=True)
 # ---------------- 7. ENSAYO DE IA ----------------
 elif opcion == "7. Ensayo de IA":
     st.header("7. Ensayo de IA")
