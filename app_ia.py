@@ -46,8 +46,8 @@ elif opcion == "2. Antecedentes":
         if os.path.exists(img):
             st.image(img, use_container_width=True)
 
-# ---------------- 3. CLASIFICACIÓN ----------------
-elif opcion == "3. Clasificación":
+# ---------------- 3. CLASIFICACIÓN DE LA IA ----------------
+elif opcion == "3. Clasificación de la IA":
     st.header("3. Clasificación de la IA")
     
     st.subheader("IA Débil o Estrecha (Narrow AI)")
@@ -112,7 +112,6 @@ elif opcion == "6. Glosario":
     st.header("6. Glosario de IA")
     st.subheader("Glosario de Conceptos Fundamentales")
 
-    # Nombre exacto de la imagen en GitHub
     imagen_sistema_experto = "366dcdbb-ab63-4bb8-8114-9018ca9aea19.jpg"
 
     glosario_data = [
@@ -184,76 +183,12 @@ elif opcion == "7. Ensayo de IA":
     else:
         st.warning(f"El archivo '{pdf_filename}' no se encuentra en el directorio actual. Por favor, súbelo a tu repositorio de GitHub.")
 
-# ---------------- 8. ELEMENTOS DE BÚSQUEDA ----------------
-elif opcion == "8. Elementos de Búsqueda":
-    st.header("8. Elementos que Intervienen en un Algoritmo de Búsqueda")
+# ---------------- 8. CLASIFICACIÓN DE ALGORITMOS DE BÚSQUEDA ----------------
+elif opcion == "8. Clasificación de Algoritmos de Búsqueda":
+    st.header("8. Clasificación de Algoritmos de Búsqueda")
     st.write(
-        "Para que un algoritmo de búsqueda pueda ejecutarse de manera correcta dentro de un sistema o estructura de datos, "
-        "intervienen seis elementos fundamentales:"
-    )
-    
-    elementos = [
-        ("📍 Espacio de búsqueda", "El lugar donde buscas (una lista, tabla, arreglo o archivo) o la colección completa de datos."),
-        ("🔑 Dato objetivo (Clave)", "Lo que estás buscando exactamente (un número, nombre, ID o valor específico)."),
-        ("👉 Puntero o Posición", "El indicador o índice que señala qué elemento o nodo estás revisando en ese preciso momento."),
-        ("⚖️ Regla de comparación", "La condición de evaluación básica: ¿El elemento actual es igual, mayor o menor al valor que busco?"),
-        ("🛑 Condición de fin", "El mecanismo que detiene el algoritmo, ya sea porque se halló el elemento deseado o porque se agotaron todas las opciones sin éxito."),
-        ("🎯 Resultado", "La respuesta final devuelta por el sistema (por ejemplo, la posición/índice del dato o un mensaje de 'no encontrado').")
-    ]
-    
-    # Renderizado interactivo con expanders y columnas
-    for titulo, descripcion in elementos:
-        with st.expander(titulo):
-            st.write(descripcion)
-            
-    st.divider()
-    st.info(
-        "💡** Recuerda que estos 6 elementos aplican tanto para algoritmos simples en estructuras de datos "
-        "(como la Búsqueda Lineal o Binaria) como para algoritmos avanzados en Inteligencia Artificial (como BFS, DFS o A*)."
-    )
-# ---------------- 9. EJEMPLO PRÁCTICO DE BÚSQUEDA ----------------
-elif opcion == "9. Ejemplo Práctico de Búsqueda":
-    st.header("9. Ejemplo Práctico: Identificación de Elementos en un Algoritmo")
-    
-    st.subheader("Caso de Estudio: Búsqueda de la Palabra Más Larga (Búsqueda por Condición)")
-    st.write(
-        "Imagina que tienes un párrafo y deseas encontrar cuál es la palabra con mayor cantidad de letras. "
-        "A continuación se detalla el paso a paso del proceso:"
-    )
-    
-    # Secuencia paso a paso del algoritmo
-    st.markdown("""
-    1. **Paso 1:** Lees la primera palabra: *"El"* (2 letras). Es la palabra más larga hasta el momento.
-    2. **Paso 2:** Lees la segunda palabra: *"algoritmo"* (9 letras). Es más larga que *"El"*, así que la guardas como tu nuevo récord.
-    3. **Paso 3:** Lees la tercera palabra: *"busca"* (5 letras). No supera a *"algoritmo"*, por lo que la ignoras.
-    4. **Paso 4:** Sigues revisando de manera secuencial hasta llegar a la última palabra del texto.
-    """)
-    
-    st.divider()
-    
-    st.subheader("📌 Identificación de los 6 Elementos Fundamentales")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.info("**1. Espacio de búsqueda:**\nEl párrafo completo dividido en una lista de palabras.")
-        st.info("**2. Dato objetivo:**\nNo es un valor fijo, sino la condición de cumplir con la **máxima longitud de caracteres**.")
-        st.info("**3. Puntero o Posición:**\nEl indicador que recorre el texto palabra por palabra, desde la primera hasta la última.")
-        
-    with col2:
-        st.success("**4. Regla de comparación:**\n¿La longitud de la palabra actual es mayor que la longitud de la palabra récord guardada?")
-        st.success("**5. Condición de fin:**\nLlegar al final del párrafo tras haber revisado la última palabra.")
-        st.success("**6. Resultado:**\nLa palabra *'algoritmo'* y su tamaño (9 letras).")
-
-    st.divider()
-    st.caption("💡**Este ejemplo demuestra que un algoritmo de búsqueda no solo sirve para encontrar un número fijo, sino también para evaluar condiciones o propiedades específicas en un conjunto de datos.")
-
-# ---------------- 10. CLASIFICACIÓN DE ALGORITMOS ----------------
-elif opcion == "10. Clasificación de Algoritmos":
-    st.header("10. Clasificación de Algoritmos de Búsqueda")
-    st.write(
-        "A continuación se presenta la clasificación completa de los algoritmos de búsqueda "
-        "utilizados en Ciencias de la Computación e Inteligencia Artificial:"
+        "A continuación se presenta la clasificación detallada de las 6 familias principales "
+        "de algoritmos de búsqueda utilizados en IA y Ciencias de la Computación:"
     )
 
     categorias = [
@@ -262,9 +197,9 @@ elif opcion == "10. Clasificación de Algoritmos":
             "Métodos que solo conocen el estado inicial, las acciones posibles y cómo verificar si alcanzaron la meta. No tienen una estimación de qué tan lejos o cerca están del objetivo.",
             "Exploración ordenada y exhaustiva según reglas fijas de la estructura del árbol o grafo.",
             [
-                ("BFS (Búsqueda en Anchura)", "Explora nivel por nivel todos los nodos de una misma profundidad.", "Redes sociales (LinkedIn/Facebook) para encontrar contactos de 1.er, 2.º o 3.er grado."),
-                ("DFS (Búsqueda en Profundidad)", "Avanza lo más profundo posible en cada rama antes de retroceder (backtracking).", "Resolución de laberintos por un robot al chocar con pared ciega."),
-                ("UCS (Búsqueda de Costo Uniforme)", "Evalúa caminos acumulando el costo de cada paso y expande la ruta con menor costo total g(n).", "Seleccionar ruta de auto con menor costo de casetas de cobro.")
+                ("BFS (Búsqueda en Anchura)", "Explora nivel por nivel todos los nodos de una misma profundidad antes de pasar al siguiente.", "Redes sociales (LinkedIn/Facebook) para encontrar contactos de 1.er, 2.º o 3.er grado."),
+                ("DFS (Búsqueda en Profundidad)", "Avanza lo más profundo posible en cada rama antes de retroceder (backtracking).", "Resolución de laberintos por un robot al chocar con una pared sin salida."),
+                ("UCS (Búsqueda de Costo Uniforme)", "Evalúa caminos acumulando el costo de cada paso y expande la ruta con el menor costo total g(n).", "Seleccionar ruta de auto que menos gasta en casetas de cobro.")
             ]
         ),
         (
@@ -281,7 +216,7 @@ elif opcion == "10. Clasificación de Algoritmos":
             "Métodos que operan sobre un único estado actual en lugar de guardar todo el mapa o árbol de rutas.",
             "Evalúan los vecinos inmediatos del estado actual y avanzan hacia el que mejore la función de calidad o costo.",
             [
-                ("Escalada de Colinas (Hill-Climbing)", "Evalúa a los vecinos inmediatos y avanza hacia el que mejore la solución, deteniéndose en máximos locales.", "Enfoque automático de la cámara de un smartphone (Autofocus)."),
+                ("Escalada de Colinas (Hill-Climbing)", "Evalúa a los vecinos inmediatos y avanza hacia el que mejore la solución, deteniéndose cuando ninguno es mejor.", "Enfoque automático de la cámara de un smartphone (Autofocus)."),
                 ("Templado Simulado (Simulated Annealing)", "Inspirado en el enfriamiento de metales; acepta soluciones peores al inicio para escapar de máximos locales.", "Diseño e interconexión de componentes en microchips."),
                 ("Búsqueda Tabú (Tabu Search)", "Guarda una memoria a corto plazo ('Lista Tabú') con las últimas soluciones para no caer en ciclos.", "Asignación de horarios universitarios y aulas sin traslapes.")
             ]
@@ -311,8 +246,8 @@ elif opcion == "10. Clasificación de Algoritmos":
             "Métodos diseñados para localizar la posición de un valor específico dentro de un conjunto de datos en memoria.",
             "Recorren o dividen arreglos y listas comparando los datos almacenados con el valor buscado.",
             [
-                ("Búsqueda Lineal (Secuencial)", "Revisa elemento por elemento, de principio a fin, hasta encontrar la coincidencia.", "Buscar un nombre en una lista impresas no ordenada alfabéticamente."),
-                ("Búsqueda Binaria", "Divide repetidamente a la mitad el rango de búsqueda en datos estrictamente ordenados.", "Buscar una palabra en un diccionario impreso abriendo siempre por el centro."),
+                ("Búsqueda Lineal (Secuencial)", "Revisa elemento por elemento, de principio a fin, hasta encontrar la coincidencia.", "Buscar un nombre en una lista impresa no ordenada alfabéticamente."),
+                ("Búsqueda Binaria", "Divide repetidamente a la mitad el rango de búsqueda en datos strictly ordenados.", "Buscar una palabra en un diccionario impreso abriendo siempre por el centro."),
                 ("Búsqueda por Interpolación", "Calcula una posición probable en datos ordenados uniformemente en lugar de ir al centro exacto.", "Buscar un nombre con la letra 'A' abriendo directo las primeras páginas de la guía.")
             ]
         )
@@ -327,6 +262,52 @@ elif opcion == "10. Clasificación de Algoritmos":
             for nombre_alg, desc_alg, ej_alg in casos:
                 st.markdown(f"🔹 **{nombre_alg}:** {desc_alg}")
                 st.caption(f"💡 *Ejemplo práctico:* {ej_alg}")
+
+# ---------------- 9. ELEMENTOS DE BÚSQUEDA ----------------
+elif opcion == "9. Elementos de Búsqueda":
+    st.header("9. Elementos que Intervienen en un Algoritmo de Búsqueda")
+    st.write(
+        "Para que un algoritmo de búsqueda pueda ejecutarse de manera correcta, "
+        "intervienen seis elementos fundamentales:"
+    )
+    
+    elementos = [
+        ("📍 Espacio de búsqueda", "El lugar donde buscas (una lista, tabla, arreglo o archivo) o la colección completa de datos."),
+        ("🔑 Dato objetivo (Clave)", "Lo que estás buscando exactamente (un número, nombre, ID o valor específico)."),
+        ("👉 Puntero o Posición", "El indicador o índice que señala qué elemento o nodo estás revisando en ese preciso momento."),
+        ("⚖️ Regla de comparación", "La condición de evaluación básica: ¿El elemento actual es igual, mayor o menor al valor que busco?"),
+        ("🛑 Condición de fin", "El mecanismo que detiene el algoritmo, ya sea porque se halló el elemento deseado o porque se agotaron todas las opciones."),
+        ("🎯 Resultado", "La respuesta final devuelta por el sistema (por ejemplo, la posición/índice del dato o 'no existe').")
+    ]
+    
+    for titulo, descripcion in elementos:
+        with st.expander(titulo):
+            st.write(descripcion)
+
+# ---------------- 10. EJEMPLO PRÁCTICO DE BÚSQUEDA ----------------
+elif opcion == "10. Ejemplo Práctico de Búsqueda":
+    st.header("10. Ejemplo Práctico: Identificación de Elementos")
+    st.subheader("Caso de Estudio: Búsqueda de la Palabra Más Larga (Búsqueda por Condición)")
+    
+    st.markdown("""
+    1. **Paso 1:** Lees la primera palabra: *"El"* (2 letras). Es la palabra más larga hasta el momento.
+    2. **Paso 2:** Lees la segunda palabra: *"algoritmo"* (9 letras). Es más larga que *"El"*, así que la guardas como tu nuevo récord.
+    3. **Paso 3:** Lees la tercera palabra: *"busca"* (5 letras). No supera a *"algoritmo"*, por lo que la ignoras.
+    4. **Paso 4:** Sigues revisando de manera secuencial hasta llegar a la última palabra del texto.
+    """)
+    
+    st.divider()
+    st.subheader("📌 Identificación de los 6 Elementos")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        st.info("**1. Espacio de búsqueda:**\nEl párrafo completo dividido en una lista de palabras.")
+        st.info("**2. Dato objetivo:**\nLa condición de cumplir con la **máxima longitud de caracteres**.")
+        st.info("**3. Puntero o Posición:**\nEl indicador que recorre el texto palabra por palabra.")
+    with col2:
+        st.success("**4. Regla de comparación:**\n¿La longitud actual es mayor que la longitud récord guardada?")
+        st.success("**5. Condición de fin:**\nLlegar al final del párrafo tras revisar la última palabra.")
+        st.success("**6. Resultado:**\nLa palabra *'algoritmo'* (9 letras).")
 
 # ---------------- 11. INFOGRAFÍA DE BÚSQUEDA ----------------
 elif opcion == "11. Infografía de Búsqueda":
@@ -351,4 +332,4 @@ elif opcion == "11. Infografía de Búsqueda":
             st.image(img_path, caption=f"Página {i} - Infografía de Algoritmos de Búsqueda", use_container_width=True)
             st.divider()
         else:
-
+            st.warning(f"No se encontró la imagen '{img_path}' en el repositorio.")
