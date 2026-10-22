@@ -15,7 +15,9 @@ opcion = st.sidebar.radio(
         "4. Herramientas",
         "5. Disciplinas",
         "6. Glosario",
-        "7. Ensayo de IA"
+        "7. Ensayo de IA",
+        "8. Elementos de Búsqueda",
+        "9. Ejemplo Práctico de Búsqueda"
     ]
 )
 
@@ -112,6 +114,7 @@ elif opcion == "6. Glosario":
     imagen_sistema_experto = "366dcdbb-ab63-4bb8-8114-9018ca9aea19.jpg"
 
     glosario_data = [
+        ("Algoritmo de búsqueda", "Conjunto de reglas y procesos que los motores de búsqueda u otros sistemas computacionales utilizan para analizar, clasificar y mostrar los resultados más relevantes para una consulta o tarea determinada.", None),
         ("Deep learning", "Subcampo del Machine Learning basado en redes neuronales profundas con múltiples capas que aprenden representaciones complejas de datos.", None),
         ("Predicción de comportamiento", "Técnica analítica que utiliza algoritmos e información histórica para anticipar acciones, tendencias o decisiones futuras de un sistema o usuario.", None),
         ("Red neuronal", "Modelo computacional inspirado en la estructura y funcionamiento del cerebro humano, compuesto por nodos (neuronas artificiales) interconectados.", None),
@@ -154,6 +157,7 @@ elif opcion == "6. Glosario":
                     st.image(imagen, caption="Esquema del Sistema Experto / Inteligente", use_container_width=True)
                 else:
                     st.warning(f"No se encontró la imagen '{imagen}' en el repositorio.")
+
 # ---------------- 7. ENSAYO DE IA ----------------
 elif opcion == "7. Ensayo de IA":
     st.header("7. Ensayo de IA")
@@ -177,3 +181,67 @@ elif opcion == "7. Ensayo de IA":
             )
     else:
         st.warning(f"El archivo '{pdf_filename}' no se encuentra en el directorio actual. Por favor, súbelo a tu repositorio de GitHub.")
+
+# ---------------- 8. ELEMENTOS DE BÚSQUEDA ----------------
+elif opcion == "8. Elementos de Búsqueda":
+    st.header("8. Elementos que Intervienen en un Algoritmo de Búsqueda")
+    st.write(
+        "Para que un algoritmo de búsqueda pueda ejecutarse de manera correcta dentro de un sistema o estructura de datos, "
+        "intervienen seis elementos fundamentales:"
+    )
+    
+    elementos = [
+        ("📍 Espacio de búsqueda", "El lugar donde buscas (una lista, tabla, arreglo o archivo) o la colección completa de datos."),
+        ("🔑 Dato objetivo (Clave)", "Lo que estás buscando exactamente (un número, nombre, ID o valor específico)."),
+        ("👉 Puntero o Posición", "El indicador o índice que señala qué elemento o nodo estás revisando en ese preciso momento."),
+        ("⚖️ Regla de comparación", "La condición de evaluación básica: ¿El elemento actual es igual, mayor o menor al valor que busco?"),
+        ("🛑 Condición de fin", "El mecanismo que detiene el algoritmo, ya sea porque se halló el elemento deseado o porque se agotaron todas las opciones sin éxito."),
+        ("🎯 Resultado", "La respuesta final devuelta por el sistema (por ejemplo, la posición/índice del dato o un mensaje de 'no encontrado').")
+    ]
+    
+    # Renderizado interactivo con expanders y columnas
+    for titulo, descripcion in elementos:
+        with st.expander(titulo):
+            st.write(descripcion)
+            
+    st.divider()
+    st.info(
+        "💡 **Nota para examen:** Recuerda que estos 6 elementos aplican tanto para algoritmos simples en estructuras de datos "
+        "(como la Búsqueda Lineal o Binaria) como para algoritmos avanzados en Inteligencia Artificial (como BFS, DFS o A*)."
+    )
+# ---------------- 9. EJEMPLO PRÁCTICO DE BÚSQUEDA ----------------
+elif opcion == "9. Ejemplo Práctico de Búsqueda":
+    st.header("9. Ejemplo Práctico: Identificación de Elementos en un Algoritmo")
+    
+    st.subheader("Caso de Estudio: Búsqueda de la Palabra Más Larga (Búsqueda por Condición)")
+    st.write(
+        "Imagina que tienes un párrafo y deseas encontrar cuál es la palabra con mayor cantidad de letras. "
+        "A continuación se detalla el paso a paso del proceso:"
+    )
+    
+    # Secuencia paso a paso del algoritmo
+    st.markdown("""
+    1. **Paso 1:** Lees la primera palabra: *"El"* (2 letras). Es la palabra más larga hasta el momento.
+    2. **Paso 2:** Lees la segunda palabra: *"algoritmo"* (9 letras). Es más larga que *"El"*, así que la guardas como tu nuevo récord.
+    3. **Paso 3:** Lees la tercera palabra: *"busca"* (5 letras). No supera a *"algoritmo"*, por lo que la ignoras.
+    4. **Paso 4:** Sigues revisando de manera secuencial hasta llegar a la última palabra del texto.
+    """)
+    
+    st.divider()
+    
+    st.subheader("📌 Identificación de los 6 Elementos Fundamentales")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.info("**1. Espacio de búsqueda:**\nEl párrafo completo dividido en una lista de palabras.")
+        st.info("**2. Dato objetivo:**\nNo es un valor fijo, sino la condición de cumplir con la **máxima longitud de caracteres**.")
+        st.info("**3. Puntero o Posición:**\nEl indicador que recorre el texto palabra por palabra, desde la primera hasta la última.")
+        
+    with col2:
+        st.success("**4. Regla de comparación:**\n¿La longitud de la palabra actual es mayor que la longitud de la palabra récord guardada?")
+        st.success("**5. Condición de fin:**\nLlegar al final del párrafo tras haber revisado la última palabra.")
+        st.success("**6. Resultado:**\nLa palabra *'algoritmo'* y su tamaño (9 letras).")
+
+    st.divider()
+    st.caption("💡**Este ejemplo demuestra que un algoritmo de búsqueda no solo sirve para encontrar un número fijo, sino también para evaluar condiciones o propiedades específicas en un conjunto de datos.")
