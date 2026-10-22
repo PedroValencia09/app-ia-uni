@@ -11,13 +11,15 @@ opcion = st.sidebar.radio(
     [
         "1. Concepto de IA",
         "2. Antecedentes",
-        "3. Clasificación",
+        "3. Clasificación de la IA",
         "4. Herramientas",
         "5. Disciplinas",
         "6. Glosario",
         "7. Ensayo de IA",
-        "8. Elementos de Búsqueda",
-        "9. Ejemplo Práctico de Búsqueda"
+        "8. Clasificación de Algoritmos de Búsqueda",
+        "9. Elementos de Búsqueda",
+        "10. Ejemplo Práctico de Búsqueda",
+        "11. Infografía de Búsqueda"
     ]
 )
 
@@ -206,7 +208,7 @@ elif opcion == "8. Elementos de Búsqueda":
             
     st.divider()
     st.info(
-        "💡 **Nota para examen:** Recuerda que estos 6 elementos aplican tanto para algoritmos simples en estructuras de datos "
+        "💡** Recuerda que estos 6 elementos aplican tanto para algoritmos simples en estructuras de datos "
         "(como la Búsqueda Lineal o Binaria) como para algoritmos avanzados en Inteligencia Artificial (como BFS, DFS o A*)."
     )
 # ---------------- 9. EJEMPLO PRÁCTICO DE BÚSQUEDA ----------------
@@ -245,3 +247,108 @@ elif opcion == "9. Ejemplo Práctico de Búsqueda":
 
     st.divider()
     st.caption("💡**Este ejemplo demuestra que un algoritmo de búsqueda no solo sirve para encontrar un número fijo, sino también para evaluar condiciones o propiedades específicas en un conjunto de datos.")
+
+# ---------------- 10. CLASIFICACIÓN DE ALGORITMOS ----------------
+elif opcion == "10. Clasificación de Algoritmos":
+    st.header("10. Clasificación de Algoritmos de Búsqueda")
+    st.write(
+        "A continuación se presenta la clasificación completa de los algoritmos de búsqueda "
+        "utilizados en Ciencias de la Computación e Inteligencia Artificial:"
+    )
+
+    categorias = [
+        (
+            "1. Algoritmos No Informados (Ciegos)",
+            "Métodos que solo conocen el estado inicial, las acciones posibles y cómo verificar si alcanzaron la meta. No tienen una estimación de qué tan lejos o cerca están del objetivo.",
+            "Exploración ordenada y exhaustiva según reglas fijas de la estructura del árbol o grafo.",
+            [
+                ("BFS (Búsqueda en Anchura)", "Explora nivel por nivel todos los nodos de una misma profundidad.", "Redes sociales (LinkedIn/Facebook) para encontrar contactos de 1.er, 2.º o 3.er grado."),
+                ("DFS (Búsqueda en Profundidad)", "Avanza lo más profundo posible en cada rama antes de retroceder (backtracking).", "Resolución de laberintos por un robot al chocar con pared ciega."),
+                ("UCS (Búsqueda de Costo Uniforme)", "Evalúa caminos acumulando el costo de cada paso y expande la ruta con menor costo total g(n).", "Seleccionar ruta de auto con menor costo de casetas de cobro.")
+            ]
+        ),
+        (
+            "2. Algoritmos Informados (Heurísticos)",
+            "Métodos que emplean conocimiento adicional específico del dominio (función heurística h(n)) para guiarse hacia la meta.",
+            "Evalúan y priorizan los caminos que parecen más prometedores para ahorrar tiempo y cómputo.",
+            [
+                ("Búsqueda Voraz (Greedy Best-First)", "Elige en cada paso la opción que parece estar más cerca de la meta según h(n), ignorando el costo recorrido.", "Fantasmas en Pac-Man moviéndose directamente hacia el jugador."),
+                ("Algoritmo A* (A-Estrella)", "Navegación óptima que combina el costo recorrido g(n) con la estimación restante h(n).", "Sistemas de GPS (Google Maps / Waze) calculando la ruta más rápida.")
+            ]
+        ),
+        (
+            "3. Algoritmos de Búsqueda Local",
+            "Métodos que operan sobre un único estado actual en lugar de guardar todo el mapa o árbol de rutas.",
+            "Evalúan los vecinos inmediatos del estado actual y avanzan hacia el que mejore la función de calidad o costo.",
+            [
+                ("Escalada de Colinas (Hill-Climbing)", "Evalúa a los vecinos inmediatos y avanza hacia el que mejore la solución, deteniéndose en máximos locales.", "Enfoque automático de la cámara de un smartphone (Autofocus)."),
+                ("Templado Simulado (Simulated Annealing)", "Inspirado en el enfriamiento de metales; acepta soluciones peores al inicio para escapar de máximos locales.", "Diseño e interconexión de componentes en microchips."),
+                ("Búsqueda Tabú (Tabu Search)", "Guarda una memoria a corto plazo ('Lista Tabú') con las últimas soluciones para no caer en ciclos.", "Asignación de horarios universitarios y aulas sin traslapes.")
+            ]
+        ),
+        (
+            "4. Algoritmos Evolutivos y Metaheurísticos",
+            "Métodos de optimización basados en poblaciones, inspirados en la biología (selección natural y genética).",
+            "Mantienen un grupo de soluciones candidatas que se seleccionan, combinan (cruce) y mutan a lo largo de generaciones.",
+            [
+                ("Algoritmos Genéticos (GA)", "Evoluciona una población de soluciones candidatas mediante aptitud, cruce de parámetros y mutación.", "Diseño aerodinámico virtual de carrocerías de autos de carrera."),
+                ("Estrategias Evolutivas (ES)", "Diseñado para optimizar parámetros numéricos continuos (con decimales) aplicando variaciones gaussianas.", "Calibración automática de suspensión y amortiguadores en vehículos."),
+                ("Programación Genética (GP)", "Variante donde las soluciones candidatas son programas de computadora o código ejecutable.", "Bots de trading financiero automático que evolucionan reglas de compra/venta.")
+            ]
+        ),
+        (
+            "5. Algoritmos de Búsqueda Adversarial (Juegos)",
+            "Métodos diseñados para entornos competitivos donde las decisiones del oponente afectan directamente el resultado.",
+            "Exploran un árbol de estados futuros calculando las mejores jugadas propias asumiendo que el rival elegirá lo peor para nosotros.",
+            [
+                ("Minimax", "Maximiza la ganancia propia asumiendo que el adversario jugará de forma perfecta para minimizarla.", "Motores de juego para Tres en Raya (Gato) o Damas."),
+                ("Poda Alfa-Beta (Alpha-Beta Pruning)", "Optimización para Minimax que descarta ramas del árbol de decisión que no afectarán la elección final.", "Motores de Ajedrez que descartan ramas con pérdidas inmediatas de piezas clave."),
+                ("MCTS (Búsqueda Monte Carlo)", "Algoritmo probabilístico que evalúa movimientos realizando miles de partidas simuladas aleatoriamente.", "Bots para juegos complejos como Go (AlphaGo) o videojuegos de estrategia.")
+            ]
+        ),
+        (
+            "6. Búsqueda en Estructuras de Datos (Clásica)",
+            "Métodos diseñados para localizar la posición de un valor específico dentro de un conjunto de datos en memoria.",
+            "Recorren o dividen arreglos y listas comparando los datos almacenados con el valor buscado.",
+            [
+                ("Búsqueda Lineal (Secuencial)", "Revisa elemento por elemento, de principio a fin, hasta encontrar la coincidencia.", "Buscar un nombre en una lista impresas no ordenada alfabéticamente."),
+                ("Búsqueda Binaria", "Divide repetidamente a la mitad el rango de búsqueda en datos estrictamente ordenados.", "Buscar una palabra en un diccionario impreso abriendo siempre por el centro."),
+                ("Búsqueda por Interpolación", "Calcula una posición probable en datos ordenados uniformemente en lugar de ir al centro exacto.", "Buscar un nombre con la letra 'A' abriendo directo las primeras páginas de la guía.")
+            ]
+        )
+    ]
+
+    for titulo, defn, estr, casos in categorias:
+        with st.expander(titulo):
+            st.markdown(f"**Definición:** {defn}")
+            st.markdown(f"**Estrategia:** {estr}")
+            st.markdown("---")
+            st.subheader("Casos típicos:")
+            for nombre_alg, desc_alg, ej_alg in casos:
+                st.markdown(f"🔹 **{nombre_alg}:** {desc_alg}")
+                st.caption(f"💡 *Ejemplo práctico:* {ej_alg}")
+
+# ---------------- 11. INFOGRAFÍA DE BÚSQUEDA ----------------
+elif opcion == "11. Infografía de Búsqueda":
+    st.header("11. Infografía: Clasificación de Algoritmos de Búsqueda")
+    st.write(
+        "A continuación se presenta la guía visual y rápida con las 6 familias principales "
+        "de algoritmos de búsqueda:"
+    )
+    
+    infografias = [
+        "Infografias_Algoritmos_de_Busqueda_v2_page-0001.jpg",
+        "Infografias_Algoritmos_de_Busqueda_v2_page-0002.jpg",
+        "Infografias_Algoritmos_de_Busqueda_v2_page-0003.jpg",
+        "Infografias_Algoritmos_de_Busqueda_v2_page-0004.jpg",
+        "Infografias_Algoritmos_de_Busqueda_v2_page-0005.jpg",
+        "Infografias_Algoritmos_de_Busqueda_v2_page-0006.jpg",
+        "Infografias_Algoritmos_de_Busqueda_v2_page-0007.jpg"
+    ]
+    
+    for i, img_path in enumerate(infografias, 1):
+        if os.path.exists(img_path):
+            st.image(img_path, caption=f"Página {i} - Infografía de Algoritmos de Búsqueda", use_container_width=True)
+            st.divider()
+        else:
+
